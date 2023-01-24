@@ -1,0 +1,339 @@
+:root{
+    --bg: #210440;
+    --blue: #36B0D4;
+    --yell: #D6A53B;
+    
+}
+
+*,
+*::before,
+*::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container .iconZone{
+    left: 20%;
+    width: 30px;
+    height: 30px;
+}
+
+.container .canvas{
+    width: 95%;
+}
+
+.canvas .cardInfo{
+    width: 35%;
+    height: 30%;
+}
+
+.canvas .Info{
+    position: relative;
+    right: 20%;
+}
+
+.container .zoneInfo{
+   left: 70%;
+}
+
+.warden{
+    position: fixed;
+    top: 24%;
+    width: 100%;
+    right: 31%;
+}
+
+.warden .war-name{
+    margin-right: 20px;
+}
+
+.systemInfo{
+    position: relative;
+    top: 58%;
+    right: 28%;
+}
+
+.systemInfo .emptyStatus{
+    position: absolute;
+    width: 15%;
+    left: 36%;
+    
+}
+
+.time .head{
+    position: relative;
+    right: 28.75%;
+}
+
+.systemInfo .time-open{
+    position: absolute;
+    padding-top: 10px;
+    right: 77%;
+    width: 100%;
+    font-weight: bold;
+}
+
+.systemInfo .slotNum{
+    position: absolute;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.line{
+    border-left: 4px solid #fff;
+    opacity: 0.85;
+    border-radius: 2px;
+    height: 50px;
+    position: absolute;
+}
+
+.icon-warden{
+    position: relative;
+    top: 2px;
+}
+
+
+.line.short{
+    position: relative;
+    height: 20px;
+    top: 24.5%;
+    margin-right: 20px;
+}
+
+.line.long{
+    position: fixed;
+    height: 45px;
+    left: 11.5%;
+    top: 30%;
+}
+
+.input-area{
+    position: fixed;
+    font-family: "Convergence", sans-serif;
+    background: var(--bg);
+    width: 50%;
+    height: 75%;
+    border-radius: 20px;
+    left: 42%;
+    top: 14%;
+}
+
+.form{
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+    top: -5vh;
+    
+}
+
+.form.input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #e1e5ee;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    outline: none;
+    padding: 1.25rem;
+    background: none;
+}
+
+.form.input:hover{
+    border-color: #adffff;
+}
+
+.form.input:focus{
+    border-color: #18ffff;
+}
+
+.form.label{
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    width: auto;
+    height: auto;
+    padding: 0 0.5rem;
+    color: white;
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: var(--bg);
+    z-index: -1;
+}
+.form.input:focus ~ .form.label,
+.form.input:not(:placeholder-shown).form.input:not(:focus) ~ .form.label{
+    top: -0.5em;
+    font-size:0.8rem;
+    left:0.8rem;
+    color: #222;
+    background: white;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.form.input:focus,
+.form.input:not(:placeholder-shown).form.input:not(:focus){
+    border-color: #fff;
+    background: var(--blue);
+    background: linear-gradient(140deg, var(--blue) 0%, var(--yell) 100%);
+}
+
+.CB,
+.CC,
+.NP,
+.PV{
+    position: relative;
+    top: 15vh;
+    left: 15vw;
+}
+
+.CC,
+.NP,
+.PV{
+    top: 30vh;
+}
+
+.NP,
+.PV{
+    top: 45vh;
+}
+
+.PV{
+    top: 60vh;
+}
+
+.btn{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.btn a{
+    position: absolute;
+    left: 20vw;
+    top: 65vh;
+    display:inline-block;
+    width: auto;
+    padding: 12px 36px;
+    margin: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: var(--blue);
+    background: linear-gradient(140deg, var(--blue) 0%, var(--yell) 100%);
+    transition: 0.5s;
+}
+
+.btn .send:hover{
+    letter-spacing: 5px;
+}
+
+#popup{
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #fff;
+    width: 450px;
+    padding: 80px 50px 50px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: 0.5s;
+    visibility: hidden;
+    border-radius: 12px;
+}
+#popup.active{
+    visibility: visible;
+    top: 50%;
+}
+#popup .content{
+    position: relative;
+    width: 100%;
+    bottom: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#popup .content .Info-icon{
+    height: 40px;
+    width: 40px;
+    color: #333;
+}
+
+#popup .content h2{
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin: 20px 0 10px;
+}
+#popup .content p{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+#popup .content .acceptBox{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#popup .content .acceptBox input{
+    width: 100%;
+    top: -2vh;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 15px;
+    outline: none;
+    font-size: 18px;
+
+}
+
+#popup .content .acceptBox input[type="submit"]{
+    position: absolute;
+    width: auto;
+    padding: 15px 20px;
+    background: var(--blue);
+    background: linear-gradient(140deg, var(--blue) 0%, var(--yell) 100%);
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    border-radius: 12px;
+    max-width: 150;
+}
+
+#popup .content .acceptBox input:hover{
+    letter-spacing: 4px;
+}
+.close{
+    position: absolute;
+    top:30px;
+    right: 30px;
+
+}
+.close .iconClose{
+    color: #333;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+
+

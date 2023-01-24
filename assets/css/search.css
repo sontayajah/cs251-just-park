@@ -1,0 +1,513 @@
+:root{
+    --bg: #210440;
+    --blue: #36B0D4;
+    --yell: #D6A53B;
+    
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navigation{
+    position: fixed;    
+    inset: 80px 0 20px 20px;
+    width: 75px;
+    background: #fff;
+    border-radius: 12px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.open{
+    width: 250px;
+}
+
+.navigation .menuToggle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 23px;
+}
+
+.navigation .menuToggle::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(-8px);
+    transition: 0.5s; 
+}
+
+.navigation.open .menuToggle::before{
+    transform: translateY(0px) rotate(45deg);
+}
+
+.navigation .menuToggle::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(8px);
+    transition: 0.5s; 
+    box-shadow: 0 -8px 0 #333;
+}
+
+.navigation.open .menuToggle::after{
+    transform: translateY(0px) rotate(-45deg);
+    box-shadow: 0 0 0 #333;
+}
+
+.navigation ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 0 0;
+    width: 100%;
+    
+}
+.navigation ul li{
+    list-style: none;
+    position: relative;
+    height: 60px;
+    padding: 0 10px;
+    transition: 0.5s;
+}
+
+.menuZone ul li{
+    transition: 0.5s;
+}
+
+.navigation ul li.active{
+    transform: translateX(30px);
+}
+
+.navigation.open ul li.active{
+    transform: translateX(10px);
+}
+
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation ul li a .floor{
+    position: relative;
+    display: block;
+    min-width: 55px;
+    height: 55px;
+    line-height: 60px;
+    transition: 0.5s;
+    font-size: 1.75em;
+    border-radius: 10px;
+    color: #222;
+    z-index: 0;
+}
+
+.navigation ul li.active a .floor{
+    color: #fff;
+    background: var(--clr);
+}
+
+.navigation ul li a .floor::before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.navigation ul li.active a .floor::before{
+    opacity: 0.5;
+}
+
+.menuZone ul li.activeZone a{
+    background: var(--blue);
+    background: linear-gradient(140deg, var(--blue) 0%, var(--yell) 100%);
+}
+
+.menuZone ul li.activeZone a .zone{
+    color: #fff;
+}
+
+.menuZone ul li a ::before{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--blue);
+    background: linear-gradient(140deg, var(--blue) 0%, var(--yell) 100%);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.navigation ul li.activeZone a::before{
+    opacity: 0.5;
+}
+
+
+
+
+
+.navigation ul li a .slot{
+    position: relative;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.navigation.open ul li a .slot{
+    opacity: 1;
+    visibility: visible;
+}
+
+.navigation ul li.active a .slot{
+    color: var(--clr);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.navigation.open .container .canvas{
+    left: calc(12vw + 180px);
+    width: calc(85vw - 180px);
+    transition: 0.5s;
+}
+
+.navigation.open .slotInfo{
+    left: calc(56vw - 100px);
+    transition: 0.5s;
+}
+
+.navigation .slotInfo{
+    left: 56vw;
+    transition: 0.5s;
+}
+
+.navigation .container .canvas .slotImg .img_slot{
+    position: fixed;
+    display: flex;
+    max-width: 70vw;
+    transition: 0.5s;
+    left: 20vw;
+    top: 35vh;
+    z-index: -1;
+}
+
+.navigation .func-slot{
+    position: relative;
+    display: flex;
+    left: 13vw;
+    top: 17vh;
+    transition: 0.5s;
+}
+
+
+.navigation.open .container .canvas .slotImg .img_slot{
+    position: fixed;
+    left: calc(20vw + 180px);
+    /*left: calc(20vw + 180px);*/
+   /*bottom: calc(5vh + 100px);*/
+    transition: 0.5s;
+}
+
+
+.navigation .menuZone ul li a{
+    left: 1.5vw;
+    transition: 0.5s;
+}
+.navigation.open .menuZone ul li a{
+    left: calc(2vw + 173px);
+    transition: 0.5s;
+}
+
+/*
+.navigation.open .func-slot.sec1 ul li,
+.navigation.open .func-slot.sec2 ul li {
+    width: calc(100%-180px);
+}*/
+
+
+
+
+.navigation .container .canvas{
+    left: 12%;
+    width: 85%;
+    transition: 0.5s;
+}
+
+.container .canvas{
+    position: fixed;    
+    inset: 80px 0 20px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    z-index: 9999;
+}
+
+.canvas .cardInfo{
+    position: relative;
+    inset: 30px 0px 0px 30px;
+    color: #fff;
+    width: 95%;
+    height: 10%;
+    border-radius: 12px;
+    background: var(--blue);
+    background: linear-gradient(140deg, var(--blue) 0%, var(--yell) 100%);
+    opacity: 0.95;
+}
+.canvas .cardInfo .Info{
+    text-align: center;
+    float: left;
+}
+
+.canvas .cardInfo .Info .inline{
+    display: inline;
+    top: 15px;
+}
+.floorInfo{
+    left: 50%;
+    font-weight: bold;
+}
+.textInfo{
+   font-size: 24px;
+   left: 28vw;
+   font-weight: bold;
+}
+.slotInfo{
+    font-weight: bold;
+}
+
+.slotInfo{
+    font-size: 24px;
+}
+
+.zoneInfo{
+    font-size: 24px;
+    position: relative;
+    font-weight: bold;
+    left: 31vw;
+    top: 15px;
+}
+
+.slotImg img{
+    max-width: 87%;
+}
+
+.menuZone ul a span{
+    position: relative;
+    color: #222;
+    font-size: 24px;
+    width: 80px;
+    top: 15%;
+}
+.menuZone ul{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    left: 41.7vw;
+    bottom: 65vh;
+}
+
+.menuZone ul li a{
+    position: relative;
+    display: block;
+    min-width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background: var(--yell);
+}
+
+.iconZone{
+    position: relative;
+    left: 23vw;
+    top: 6.5px;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+}
+.iconZone.st{
+    opacity: 0.5;
+}
+.iconZone.nd{
+    opacity: 0.75;
+}
+
+.func-slot ul{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.func-slot.sec1 ul li{
+    margin-left: 1px;
+    top: 1.5vh;
+    transition: 0.5s;
+}
+
+.func-slot ul li a span{
+    position: fixed;
+    color: #222;
+    top: 30%;
+}
+
+
+.func-slot.sec1 ul li a span{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 1.5vw;
+    transform: skew(-28deg);
+}
+.func-slot.sec2 ul li a span{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 1.5vw;
+    transform: skew(30deg);
+}
+
+.func-slot.sec2 ul li{
+    margin-left: 1px;
+    top: 40vh;
+    transition: 0.5s;
+}
+
+.func-slot ul li a .card-slot{
+    width: 8vw;
+    height: 8vw;
+    background: #fff;
+}
+
+.func-slot.sec1 ul li a .card-slot{
+    transform: skew(28deg);
+}
+
+.func-slot.sec2 ul li a .card-slot{
+    transform: skew(-30deg);
+}
+
+.func-slot ul li .hover:hover > .card-slot {
+    background: var(--blue);
+    background: linear-gradient(140deg, var(--blue) 0%, var(--yell) 100%);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.func-slot ul li .hover:hover > .card-slot span{
+    color: #fff;
+    transition: 0.5s;
+}
+
+.sec1 .car img{
+    transform: rotate(63deg);
+}
+
+.sec2 .car img{
+    transform: rotate(-63deg);
+}
+
+.func-slot ul li .booked{
+    pointer-events: none;
+}
+
+.model-container{
+    display: none;
+}
+
+button{
+    background-color: var(--yell);
+    border: 0;
+    position: relative;
+    border-radius: 5px;
+    padding: 10px 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    top: 40%;
+   
+}
+
+.model-container{
+    position: fixed;
+    display: flex;
+    opacity: 0;
+    top: 50%;
+    left: 30%;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.model {
+    position: fixed;
+    background-color: var(--bg);
+    opacity: 0.95;
+    width: 600px;
+    border-radius: 12px;
+    height: 300px;
+    bottom: 36%;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.model h1{
+    color: #fff;
+    margin: 0;
+}
+
+.model p{
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    top: 50px;
+    opacity: 0.7px;
+}
+
+.model-container.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.model-container .confirm{
+    position: relative;
+    right: 50px;
+}
+.model-container .cancel{
+    position: relative;
+    left: 50px;
+}
+

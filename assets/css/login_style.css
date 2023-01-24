@@ -1,0 +1,130 @@
+body {
+    background-color: #210440;
+    color: #666666;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.container {
+    width: 600px;
+    height: auto;
+    padding: 50px;
+    margin-top: 20px;
+    /*margin: 75px 0 0 370px;
+    บน ขวา ล่าง ซ้าย*/
+    border: 1px solid white;
+    border-radius: 6px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.064);
+}
+
+#login h2 {
+    color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#form-element {
+    font-family: "Poppins", sans-serif;
+    margin: 15px 0px;
+}
+
+#form-element label {
+    font-size: 16px;
+    color: #fff;
+}
+
+#form-element input[type="text"],
+#form-element input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+#btn-log {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    display: inline-block;
+    background: #00CED1;
+    text-decoration: none;
+}
+
+#btn-log:hover {
+    background-color: #1ea1a3;
+}
+
+#guest h2 {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#g-text {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+#btn-guest {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    display: inline-block;
+    background: #FFC600;
+    text-decoration: none;
+}
+
+#btn-guest:hover {
+    background-color: #d6ab0c;
+}
+
+.title h1 {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.title p {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#icon_arr {
+    position: relative;
+    max-width: 20px;
+}
